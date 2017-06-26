@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body class="theme-red">
+      <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal panelgray">
+		<img src="/img/222.png" width="100%">
+      <div class="content-block">
+        
+          <div class="content-block">
+			<h3>
+				<a href="index.html">На главную</a>
+			</h3>
+		</div>
+ 
+<div class="list-block accordion-list">
+  <ul>
+    <li class="accordion-item">
+       <a href="#" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">Пробоотборники</div>
+        </div></a>
+      <div class="accordion-item-content">
+        <div class="content-block">
+			<p>- <a href="gas.html" data-ignore-cache="true" class="graylink"
+         >Газа</a></p>
+			<p>- <a href="neft.html" data-ignore-cache="true" class="graylink">Нефтепродуктов</a></p>
+			<p>-<a href="kraski.html" data-ignore-cache="true" class="graylink"> Красок</a></p>
+			<p>-<a href="agress.html" data-ignore-cache="true" class="graylink"> Агрессивных сред</a></p>
+			<p>-<a href="eda.html" data-ignore-cache="true" class="graylink"> Пищевых продуктов</a></p>
+        </div>
+      </div>
+    </li>
+    <li class="accordion-item">
+       <a href="contacts.html" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">
+             Вискозиметры
+          </div>
+        </div>
+        </a>
+     
+    </li>
+    <li class="accordion-item">                  
+        <a href="contacts.html" class="item-content item-link">
+        <div class="item-inner">
+          <div class="item-title">
+         Запорная арматура
+          </div>
+        </div>
+        </a>
+    </li>
+    
+        <li class="accordion-item"><a href="#about" class="item-content item-link">
+        <div class="item-inner">
+            <div class="item-title">
+        Микрошприцы
+          </div>
+             </div></a>
+     
+        
+    </li>
+
+  </ul>
+</div>
+      <div class="content-block">
+		  <h3><b>Калькулятор вязкости</b></h3>
+      </div>
+      
+       
+       
+        <p> 
+        <div class="icon">
+        <i class="material-icons">help_outline</i>
+ 
+        </div></p>
+      </div>
+    </div>
+    
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar theme-red">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            <p>Page content goes here
+                            <form name=MyForm>       
+  <div class="list-block">
+   <br>
+  
+  	<div class="row">
+    <!-- Each "cell" has col-[widht in percents] class -->
+    <div class="col-33"></div>
+    <div class="col-33">
+    <input name=stopwatch size=20 value="00:00:00" class="redcolor sekund-style center">
+    </div>
+    <div class="col-33"></div>
+</div>
+	
+	  <br>
+	<div class="row buttonstyle">
+    <!-- Each "cell" has col-[widht in percents] class -->
+    <div class="col-50">
+        
+      	<img  id="change"  name="change" src="/img/pic1.png" onclick="swapImage();StartStop()" />
+     <input type=button value="Запуск/Остановить" onclick="StartStop()" class="button button-big button-fill color-green">
+   </div>
+    <div class="col-50">
+    <img  id="change1" name="change1" src="/img/pic1.png" onclick="swapImage1();ClearСlock()" />
+    <!--	<img  id="change2" name="change2" src="/img/pic3.png" onclick="swapImage1();ClearСlock()" />-->
+     <input type=button value="Обнулить" onclick="ClearСlock()" class="button button-big button-fill color-red">
+	 
+     
+    </div>
+    </div>  
+       <br>
+      
+	<input name=stopwatch2x><br>	
+	<input name="stopwatch3x"><br>
+	<input name="stopwatch4x"><br>
+	<input name="stopwatch5x"><br>
+	
+	
+  
+  Конечный результат 
+  <input name="resultpole" class="redcolor sekund-style center"> сСтокс<br>
+  
+</div>  
+		
+</form>
+                            
+                            
+                            </p>
+                            <!-- Link to another page -->
+                            <a href="about.html">About app</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script type="text/javascript" src="/js/framework7.js"></script>
+    <script type="text/javascript" src="/js/my-app.js"></script>
+</body>
+</html>
